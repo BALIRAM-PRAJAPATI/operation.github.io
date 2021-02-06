@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta lang="en-us">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>
+LCM
+</title>
+<style>
+input{width:400px;height:60px;box-sizing:border-box;color:white;font-size:20px;background:black;border:10px groove red;border-radius:30px;}
+p{padding:0;margin:0;color:green;font-family:calibri;font-size:20px;}
+::placeholder{font-size:20px;color:white;}
+input:focus{outline:none;}
+fieldset{width:410px;height:auto;border:2px solid black;float:left;}
+</style>
+</head>
+<body>
+<fieldset>
+<legend><h1>LCM FINDER</h1></legend>
+<form id="form">
+<p>First number</p>
+<input type="number" id="first" placeholder="enter first number"><br>
+<p>Second number</p>
+<input type="number" id="second" placeholder="enter second number"><br><br>
+<input type="submit" value="check result">
+</form>
+<p id="result"></p>
+</fieldset>
+<fieldset>
+<legend><h1>HCF FINDER</h1></legend>
+<form id="frm">
+<p>First number</p>
+<input type="number" id="one" placeholder="enter first number"><br>
+<p>Second number</p>
+<input type="number" id="two" placeholder="enter second number"><br><br>
+<input type="submit" value="check result">
+</form>
+<p id="ans"></p>
+</fieldset>
+<fieldset>
+<legend><h1>CONVERSION NUMBER TO STRING</h1></legend>
+<form id="con">
+<p>Enter the number</p>
+<input type="number" id="single" placeholder="enter any number"><br><br>
+<input type="submit" value="check result">
+</form>
+<p id="reply"></p>
+</fieldset>
+<!--start reverse number!-->
+<fieldset>
+<legend><h1>REVERSE OF NUMBER</h1></legend>
+<form id="sign">
+<p>Enter the number</p>
+<input type="number" id="reverse" placeholder="enter any number"><br><br>
+<input type="submit" value="check result">
+</form>
+<p id="para"></p>
+</fieldset>
+<!--end reverse number coding!-->
+<script>
+var btn=document.getElementById("form");
+btn.onsubmit=function()
+{
+var x=document.getElementById("first").value;
+var y=document.getElementById("second").value;
+var z=document.getElementById("result");
+var i;
+for(i=1;i<=x*y;i++)
+{
+if(i%x===0&&i%y===0)
+{
+break;
+}
+}
+z.innerHTML="LCM is equal to="+i;
+return false;
+};
+var check=document.getElementById("frm");
+check.onsubmit=function()
+{
+var x=document.getElementById("one").value;
+var y=document.getElementById("two").value;
+var z=document.getElementById("ans");
+var i;
+for(i=x>y?y:x;i>=1;i--)
+{
+if(x%i===0&&y%i===0)
+{
+break;
+}
+}
+z.innerHTML="HCF is equal to="+i;
+return false;
+}
+var conve=document.getElementById("con");
+conve.onsubmit=function()
+{
+var x=document.getElementById("single").value;
+var ans=document.getElementById("reply");
+var y=x.toString();
+var z=y.length;
+var i;
+for(i=0;i<z;i++)
+{
+switch(y.charAt(i))
+{
+case '0' :{document.write("zero <br>");}
+break;
+case '1' :{document.write("one <br>");}
+break;
+case '2' :{document.write("two <br>");}
+break;
+case '3' :{document.write("three <br>");}
+break;
+case '4' :{document.write("four <br>");}
+break;
+case '5' :{document.write("five <br>");}
+break;
+case '6' :{document.write("six <br>");}
+break;
+case '7' :{document.write("seven <br>");}
+break;
+case '8' :{document.write("eight <br>");}
+break;
+case '9' :{document.write("nine <br>");}
+break;
+default :{document.write("error");}
+}
+}
+};
+//start reverse coding
+var check_one=document.getElementById("sign");
+check_one.onsubmit=function()
+{
+var user=document.getElementById("reverse").value;
+var result=document.getElementById("para");
+
+var ld,sum=0;
+while(user!==0)
+{
+ld=user%10;
+sum=sum*10+ld;
+user=parseInt(user/10);
+}
+result.innerHTML="reverse is="+sum;
+return false;
+}
+//end reverse coding
+</script>
+</body>
+</html>
